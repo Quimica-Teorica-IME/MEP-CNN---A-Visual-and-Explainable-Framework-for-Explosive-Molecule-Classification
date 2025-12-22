@@ -7,9 +7,12 @@ input_dir = './Molecules'
 output_base = 'Dataset' # Output folder where train/, val/, test/ will be created
 
 # Split Ratios
-train_split = 0.7
-val_split = 0.15
+train_split = 0.70
+val_split = 0.155
 # test_split will be the remainder (0.15)
+
+REPRODUCIBILITY_SEED = 50
+random.seed(REPRODUCIBILITY_SEED)
 
 # --- 1. Prepare Directories ---
 for split in ['train', 'val', 'test']:
