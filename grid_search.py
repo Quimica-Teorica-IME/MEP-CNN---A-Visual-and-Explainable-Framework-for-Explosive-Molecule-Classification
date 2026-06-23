@@ -91,20 +91,20 @@ def create_compiled_model(params):
         model.add(RandomZoom(0.1))
 
         model.add(Conv2D(16, (3,3), strides=1, padding='same', kernel_regularizer=regularizers.l2(l2_reg)))
-        model.add(Activation('relu'))
         model.add(BatchNormalization())
+        model.add(Activation('relu'))
         model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
         model.add(Dropout(dropout_conv)) 
 
         model.add(Conv2D(32, (3,3), padding='same', kernel_regularizer=regularizers.l2(l2_reg)))
-        model.add(Activation('relu'))
         model.add(BatchNormalization())
+        model.add(Activation('relu'))
         model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
         model.add(Dropout(dropout_conv)) 
 
         model.add(Conv2D(64, (3,3), padding='same', kernel_regularizer=regularizers.l2(l2_reg)))
-        model.add(Activation('relu'))
         model.add(BatchNormalization())
+        model.add(Activation('relu'))
         model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
         model.add(Dropout(dropout_conv)) 
 
