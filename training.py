@@ -76,20 +76,20 @@ with strategy.scope():
     model.add(RandomZoom(0.05))     
 
     model.add(Conv2D(16, (3,3), strides=1, padding='same', kernel_regularizer=regularizers.l2(0.0001))) # L2 
-    model.add(Activation('relu'))
     model.add(BatchNormalization())
+    model.add(Activation('relu'))
     model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
     model.add(Dropout(0.5)) # Dropout 
     
     model.add(Conv2D(32, (3,3), padding='same', kernel_regularizer=regularizers.l2(0.0001))) 
-    model.add(Activation('relu'))
     model.add(BatchNormalization())
+    model.add(Activation('relu'))
     model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
     model.add(Dropout(0.5)) # Dropout 
 
     model.add(Conv2D(64, (3,3), padding='same', kernel_regularizer=regularizers.l2(0.0001))) 
-    model.add(Activation('relu'))
     model.add(BatchNormalization())
+    model.add(Activation('relu'))
     model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
     model.add(Dropout(0.1)) # Dropout 
 
